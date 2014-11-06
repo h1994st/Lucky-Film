@@ -14,5 +14,6 @@
 sftp-config.json
 
 # Node.js & Bower
+*.log
 node_modules
 public/components
