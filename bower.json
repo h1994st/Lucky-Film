@@ -1,0 +1,26 @@
+{
+  "name": "Lucky-Film",
+  "version": "0.0.0",
+  "homepage": "https://github.com/h1994st/Lucky-Film",
+  "authors": [
+    "h1994st <h1994st@gmail.com>"
+  ],
+  "description": "A random selector for films",
+  "keywords": [
+    "Film",
+    "Selector"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.0"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Lucky-Film",
+  "version": "0.0.1",
+  "description": "A random selector for films",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h1994st/Lucky-Film.git"
+  },
+  "keywords": [
+    "Film",
+    "Selector"
+  ],
+  "author": "Tom Hu <webmaster@h1994st.com> (https://github.com/h1994st)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h1994st/Lucky-Film/issues"
+  },
+  "homepage": "https://github.com/h1994st/Lucky-Film",
+  "private": true,
+  "dependencies": {
+    "express": "~4.2.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0"
+  }
+}
