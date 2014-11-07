@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1 Lists
+  
+  ul
+    each film in lists
+      li #{film.name} #{film.url}

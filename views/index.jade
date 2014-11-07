@@ -5,7 +5,7 @@ block content
   p Welcome to #{title}
   
   form(method='POST' name='film-submit' action='/submit')
-    input(type='text' placeholder='电影名')
-    input(type='url' placeholder='下载地址')
+    input(type='text' name='film[name]' placeholder='电影名')
+    input(type='url' name='film[url]' placeholder='下载地址')
     input(type='submit' value='提交')
   

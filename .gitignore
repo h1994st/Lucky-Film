@@ -17,3 +17,4 @@ sftp-config.json
 *.log
 node_modules
 public/components
+data/*.db
