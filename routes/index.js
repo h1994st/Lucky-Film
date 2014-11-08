@@ -11,13 +11,15 @@ router.get('/', function (req, res) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/lists', function (req, res) {
-  db.all("SELECT name, url FROM SUBMITTED_FILMS", function (err, rows) {
+/* GET film list. */
+router.get('/list', function (req, res) {
+  db.all("SELECT * FROM SUBMITTED_FILMS", function (err, rows) {
     console.log(rows);
-    res.render('lists', { title: 'Lists', lists: rows });
+    res.render('list', { title: 'List', list: rows });
   });
 });
 
+/* POST film. */
 router.post('/submit', function (req, res) {
   var film = req.param('film');
   console.log(film);
@@ -37,6 +39,11 @@ router.post('/submit', function (req, res) {
   db.close();
 
   res.redirect('/');
+});
+
+/* GET random film. */
+router.get('/random', function (req, res) {
+  
 });
 
 module.exports = router;
