@@ -10,10 +10,10 @@ block content
         form(role='form', method='POST', name='film-submit', action='/submit')
           div.form-group.has-feedback
             label(for='film-name') 电影名
-            input(type='text', class='form-control input-lg', id='film-name', placeholder='电影名', required, autofocus)
+            input(type='text', name='film[name]', class='form-control input-lg', id='film-name', placeholder='电影名', required, autofocus)
           div.form-group.has-feedback
             label(for='film-url') 下载地址
-            input(type='url', class='form-control input-lg', id='film-url', placeholder='下载地址')
+            input(type='url', name='film[url]', class='form-control input-lg', id='film-url', placeholder='下载地址')
           input.btn.btn-success.btn-block.btn-lg(type='submit', value='提交')
 
       div.panel.panel-success
