@@ -1,11 +1,35 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  
-  form(method='POST' name='film-submit' action='/submit')
-    input(type='text' name='film[name]' placeholder='电影名')
-    input(type='url' name='film[url]' placeholder='下载地址')
-    input(type='submit' value='提交')
+  main.container
+    div.row
+      header
+        h1= title
+
+      div.well
+        form(role='form', method='POST', name='film-submit', action='/submit')
+          div.form-group.has-feedback
+            label(for='film-name') 电影名
+            input(type='text', class='form-control input-lg', id='film-name', placeholder='电影名', required, autofocus)
+          div.form-group.has-feedback
+            label(for='film-url') 下载地址
+            input(type='url', class='form-control input-lg', id='film-url', placeholder='下载地址')
+          input.btn.btn-success.btn-block.btn-lg(type='submit', value='提交')
+
+      div.panel.panel-success
+        div.panel-heading
+          h3.panel-title 本周提交电影
+        div.panel-body
+          if list
+            each film in list
+              div.media
+                a.media-left(href='#')
+                  img(data-src='holder.js/64x64', alt='64x64', src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==', data-holder-rendered='true', style='width: 64px; height: 64px;')
+                div.media-body
+                  h4.media-heading #{film.name}
+                  | <a href='#{film.url}'>地址</a>
+          else
+            暂时没人提交
+
+  include ./include/footer.jade
   
