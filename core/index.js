@@ -3,6 +3,8 @@ var config = require('../config');
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database(config.database);
 
+var request = require('request');
+
 function getList(req, res, next) {
   db.all("SELECT * FROM SUBMITTED_FILMS", function (err, rows) {
     console.log(rows);
@@ -31,7 +33,19 @@ function submitFilm(req, res, next) {
   next();
 };
 
+function getTop250List(req, res, next) {
+  request('http://api.douban.com/v2/movie/top250', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      req.top250List = JSON.parse(body).subjects;
+      console.log("core: !!!!!!");
+      console.log(req.top250List);
+      next();
+    };
+  });
+}
+
 module.exports = {
   getList: getList,
-  submitFilm: submitFilm
+  submitFilm: submitFilm,
+  getTop250List: getTop250List
 };
