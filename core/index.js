@@ -36,9 +36,7 @@ function submitFilm(req, res, next) {
 function getTop250List(req, res, next) {
   request('http://api.douban.com/v2/movie/top250', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      req.top250List = JSON.parse(body).subjects;
-      console.log("core: !!!!!!");
-      console.log(req.top250List);
+      req.top250List = body;
       next();
     };
   });
