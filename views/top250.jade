@@ -1,26 +1,23 @@
 extends layout
 
 block content
-  main.container
-    if list
-      div.table-responsive
-        table.table.table-hover
-          thead
+  if list
+    div.table-responsive
+      table.table.table-hover
+        thead
+          tr
+            th #
+            th Title
+            th Images
+            th Rating
+        tbody
+          each film in list
             tr
-              th #
-              th Title
-              th Images
-              th Rating
-          tbody
-            each film in list
-              tr
-                td #{film.id}
-                td #{film.title}(#{film.original_title})
-                td
-                  img.img-responsive(src="#{film.images.small}", alt="#{film.title}")
-                td #{film.rating.average}
-    else
-      p 暂无通讯
-
-  include ./include/footer.jade
+              td #{film.id}
+              td #{film.title}(#{film.original_title})
+              td
+                img.img-responsive(src="#{film.images.small}", alt="#{film.title}")
+              td #{film.rating.average}
+  else
+    p 暂无通讯
   

@@ -37,8 +37,8 @@ function getTop250List(req, res, next) {
   request('http://api.douban.com/v2/movie/top250', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       req.top250List = body;
-      next();
     };
+    next();
   });
 }
 

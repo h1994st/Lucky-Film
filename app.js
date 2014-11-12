@@ -24,6 +24,14 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function (req, res, next) {
+    if (req.get('X-PJAX')) {
+        // use pjax
+        req.pjax = true;
+    };
+    next();
+});
+
 app.use('/', routes);
 
 /// catch 404 and forward to error handler
