@@ -17,5 +17,4 @@
       NProgress.done();
     });
   });
-
 })(document);
