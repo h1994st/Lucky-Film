@@ -3,7 +3,10 @@ var path = require('path'),
 
 config = {
   database: path.join(__dirname, '/data/lucky.db'),
-  port: 80
+  port: 80,
+  douban: {
+    apikey: "";
+  }
 }
 
 // Export config
