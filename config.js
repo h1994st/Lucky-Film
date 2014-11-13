@@ -5,7 +5,7 @@ config = {
   database: path.join(__dirname, '/data/lucky.db'),
   port: 80,
   douban: {
-    apikey: "";
+    apikey: ""
   }
 }
 

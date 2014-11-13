@@ -6,6 +6,9 @@ var config = require('../config');
 
 app.set('port', process.env.PORT || config.port);
 
+// For test
+config.douban.apikey = process.argv[3];
+
 var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
 });

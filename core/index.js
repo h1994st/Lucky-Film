@@ -7,8 +7,6 @@ var request = require('request');
 
 function getList(req, res, next) {
   db.all("SELECT * FROM SUBMITTED_FILMS", function (err, rows) {
-    console.log(rows);
-
     req.list = rows;
     next();
   });
@@ -34,7 +32,8 @@ function submitFilm(req, res, next) {
 };
 
 function getTop250List(req, res, next) {
-  request('http://api.douban.com/v2/movie/top250', function (error, response, body) {
+  console.log("API Key: " + config.douban.apikey);
+  request('http://api.douban.com/v2/movie/top250?apikey=' + config.douban.apikey, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       req.top250List = body;
     };
