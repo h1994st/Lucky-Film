@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div.row
+    header
+      h1= title
+
+    div.well.well-lg.text-center
+      h4 今天的结果是！
+      p
+        h3
+          | <a href='#{random.url}'>#{random.name}</a>
+  

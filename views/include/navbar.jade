@@ -10,7 +10,10 @@ nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
 
     div#navbar-collapse.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li.active
-          a(href="/", data-pjax="/") Index
-        li
+        li(class="#{cur == 'Index' ? 'active' : ''}")
+          a(href="/", data-pjax="/") 主页
+        li(class="#{cur == 'Top250' ? 'active' : ''}")
           a(href="/top250", data-pjax="/top250") Top 250
+        if cur == 'Random'
+          li(class="#{cur == 'Random' ? 'active' : ''}")
+            a(href="/random", data-pjax="/random") 随机

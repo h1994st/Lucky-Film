@@ -41,8 +41,15 @@ function getTop250List(req, res, next) {
   });
 }
 
+function getRandomFilm(req, res, next) {
+  console.log("随机选择");
+  req.random = req.list[Math.floor(Math.random() * req.list.length)];
+  next();
+}
+
 module.exports = {
   getList: getList,
   submitFilm: submitFilm,
-  getTop250List: getTop250List
+  getTop250List: getTop250List,
+  getRandomFilm: getRandomFilm
 };
