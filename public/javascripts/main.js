@@ -7,12 +7,15 @@
 
 (function (document) {
   $(document).ready(function() {
+    // init pjax
     $(document).pjax('[data-pjax] a, a[data-pjax]', '#main-container');
 
+    // pjax start
     $(document).on('pjax:start', function(event) {
       NProgress.start();
     });
 
+    // pjax end
     $(document).on('pjax:end', function(event) {
       NProgress.done();
     });

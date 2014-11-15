@@ -1,6 +1,6 @@
 {
   "name": "Lucky-Film",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "homepage": "https://github.com/h1994st/Lucky-Film",
   "authors": [
     "h1994st <h1994st@gmail.com>"
@@ -24,6 +24,7 @@
     "bootstrap": "~3.3.0",
     "jquery-pjax": "~1.9.2",
     "typeahead.js": "~0.10.5",
-    "nprogress": "~0.1.6"
+    "nprogress": "~0.1.6",
+    "bootstrap3-typeahead": "~3.0.4"
   }
 }

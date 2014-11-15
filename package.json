@@ -1,6 +1,6 @@
 {
   "name": "Lucky-Film",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A random selector for films",
   "main": "app.js",
   "scripts": {
