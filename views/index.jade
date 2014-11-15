@@ -8,10 +8,10 @@ block content
     div.well
       form(role='form', method='POST', name='film-submit', action='/submit')
         div.form-group.has-feedback
-          label(for='film-name') 电影名
+          label(for='film-name') 电影名 (* 必填)
           input(type='text', name='film[name]', class='form-control input-lg', id='film-name', placeholder='电影名', required, autofocus)
         div.form-group.has-feedback
-          label(for='film-url') 下载地址
+          label(for='film-url') 下载地址 (最好附上片源的下载地址，这样方便下载，选填)
           input(type='url', name='film[url]', class='form-control input-lg', id='film-url', placeholder='下载地址')
         input.btn.btn-success.btn-block.btn-lg(type='submit', value='提交')
 
