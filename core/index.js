@@ -35,7 +35,7 @@ function getTop250List(req, res, next) {
   console.log("API Key: " + config.douban.apikey);
   var url = 'http://api.douban.com/v2/movie/top250';
   url = config.douban.apikey ? (url + '?apikey=' + config.douban.apikey) : url;
-  request('http://api.douban.com/v2/movie/top250?apikey=' + config.douban.apikey, function (error, response, body) {
+  request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       req.top250List = body;
     };
