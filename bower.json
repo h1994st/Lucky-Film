@@ -23,7 +23,6 @@
     "jquery": "~2.1.1",
     "bootstrap": "~3.3.0",
     "jquery-pjax": "~1.9.2",
-    "typeahead.js": "~0.10.5",
     "nprogress": "~0.1.6",
     "bootstrap3-typeahead": "~3.0.4"
   }
